@@ -6,6 +6,8 @@ import './portfolio.css';
 import IMG1 from '../../assets/portfolio-photo.png';
 import IMG2 from '../../assets/portfolio-photo(2).png';
 // import IMG3 from '../../assets/portfolio-photo(3).png';
+
+// AirHousing Images
 import IMG4 from '../../assets/portfolio-photo(4).jpg';
 import IMG5 from '../../assets/portfolio-photo(5).jpg';
 import IMG6 from '../../assets/portfolio-photo(6).jpg';
@@ -18,6 +20,8 @@ import IMG12 from '../../assets/portfolio-photo(19).png';
 import IMG13 from '../../assets/portfolio-photo(20).png';
 import IMG14 from '../../assets/portfolio-photo(21).png';
 import IMG15 from '../../assets/portfolio-photo(22).png';
+
+// JaGedo Images
 import IMG16 from '../../assets/portfolio-photo(12).png';
 import IMG17 from '../../assets/portfolio-photo(13).png';
 import IMG18 from '../../assets/portfolio-photo(14).png';
@@ -25,6 +29,8 @@ import IMG19 from '../../assets/portfolio-photo(15).png';
 import IMG20 from '../../assets/portfolio-photo(16).png';
 import IMG21 from '../../assets/portfolio-photo(17).png';
 import IMG22 from '../../assets/portfolio-photo(18).png';
+
+// Miscellaneous Images
 import IMG23 from '../../assets/portfolio-photo(23).png';
 import IMG24 from '../../assets/portfolio-photo(24).png';
 import IMG25 from '../../assets/portfolio-photo(25).png';
@@ -80,11 +86,12 @@ const data = [
     {
         id: 5,
         image: [IMG16, IMG17, IMG18, IMG19, IMG20, IMG21, IMG22],
-        title: `JaGedo - Developed and maintained a one stop construction platform that seamlessly connects customers 
-        and builders to other builders: fundis, professionals, contractors, and hardware suppliers in your locality. 
+        title: `JaGedo - Build and maintain JaGedo, a live construction marketplace connecting customers with 1,700+ verified fundis,
+        professionals, contractors and hardware suppliers across all 47 counties, spanning a React web app, a React Native mobile
+        app (currently on Play Store and App Store) and a Node.js API.
         `,
         github: 'https://github.com/jagedos/JaGedov3-Designs/',
-        demo: 'https://uat.jagedo.co.ke/',
+        demo: 'https://jagedo.co.ke',
     },
     {
         id: 6,
