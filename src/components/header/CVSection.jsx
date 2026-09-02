@@ -1,29 +1,14 @@
 import React from 'react';
-// import CV from '../../assets/MUTONGA-CV.pdf'
+import CV from '../../assets/MUTONGA-CV.pdf'
 
+// A recruiter who wants the CV should not have to email and wait for it. The
+// download sits first because it is the action most visitors came to take.
 const CVSection = () => {
-
-    // const [hover, setHover] = React.useState(false);
-
     return (
         <div>
             <div className='cta'>
-                {/*
-                <a href={CV} download className='btn'>
-                    Download CV</a>
-                */}
-                <a href="#contact" className='btn btn-primary'>Contact for more info</a>
-                {/*
-                <div className="flex justify-center items-center h-screen bg-gray-100">
-                    <button
-                        className={`button ${'hover' ? 'hovered' : ''}`}
-                        onMouseEnter={() => setHover(true)}
-                        onMouseLeave={() => setHover(false)}
-                    >
-                        Hover Me
-                    </button>
-                </div>
-                */}
+                <a href={CV} download='Mutonga-Romeo-CV.pdf' className='btn'>Download CV</a>
+                <a href="#contact" className='btn btn-primary'>Get in touch</a>
             </div>
         </div>
     )

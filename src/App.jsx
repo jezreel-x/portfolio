@@ -4,23 +4,24 @@ import Contact from './components/contact/Contact'
 import Experience from './components/experience/Experience'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
+import Nav from './components/nav/Nav'
 import Portfolio from './components/portfolio/Portfolio'
-// import Services from './components/services/Services'
 import Testimonials from './components/testimonials/Testimonials'
-/** 
- * Thêm vào dòng 24 để hiện Testimonials
- * <Testimonials />
-*/
+
+// Section order follows how the page is read: who I am, what I know, what I
+// built, what people say about it — and only then the ask. Testimonials sat
+// after Contact before, so the social proof arrived after the call to action
+// had already been made.
 const App = () => {
     return (
         <>
             <Header />
+            <Nav />
             <About />
             <Experience />
             <Portfolio />
-
-            <Contact />
             <Testimonials />
+            <Contact />
             <Footer />
         </>
     )

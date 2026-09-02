@@ -1,12 +1,71 @@
+/* Two columns rather than three: the screenshots are the evidence, and at a
+   third of the container width they were too small to read. */
 .portfolio__container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
 }
 
-.swiper-pagination-clickable .swiper-pagination-bullet {
+/* The default bullets are near-invisible on this dark background: 0.2 opacity
+   white on a dark card. These are larger, solid, and the active one takes the
+   accent so the position in the set actually reads. */
+.portfolio__swiper .swiper-pagination-bullet {
     background: var(--color-white);
-    margin-top: 3px;
+    opacity: 0.45;
+    width: 9px;
+    height: 9px;
+    transition: var(--transition);
+}
+
+.portfolio__swiper .swiper-pagination-bullet:hover {
+    opacity: 0.8;
+}
+
+.portfolio__swiper .swiper-pagination-bullet-active {
+    background: var(--color-primary);
+    opacity: 1;
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* Arrows: visible enough to find, quiet enough not to fight the screenshot. */
+.portfolio__swiper .swiper-button-next,
+.portfolio__swiper .swiper-button-prev {
+    color: var(--color-bg);
+    background: var(--color-primary);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.portfolio__swiper .swiper-button-next::after,
+.portfolio__swiper .swiper-button-prev::after {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Revealed on hover or keyboard focus — always-on arrows over every card is
+   visual noise, but they must never be reachable only by mouse. */
+.portfolio__item:hover .swiper-button-next,
+.portfolio__item:hover .swiper-button-prev,
+.portfolio__swiper .swiper-button-next:focus-visible,
+.portfolio__swiper .swiper-button-prev:focus-visible {
+    opacity: 0.9;
+}
+
+.portfolio__swiper .swiper-button-next:hover,
+.portfolio__swiper .swiper-button-prev:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+    /* No hover on touch, so keep them permanently visible there. */
+    .portfolio__swiper .swiper-button-next,
+    .portfolio__swiper .swiper-button-prev {
+        opacity: 0.9;
+    }
 }
 
 .portfolio__item {
@@ -15,6 +74,8 @@
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--transition); /* all 400ms ease */
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio__item:hover {
@@ -22,13 +83,117 @@
     background: transparent;
 }
 
+/* Room for the pagination bullets to sit under the image instead of on it. */
+.portfolio__swiper {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: transparent;
+    padding-bottom: 1.8rem;
+}
+
+/* Phone screenshots are portrait — stretching them to the full card width just
+   scales them past their own resolution. */
+.portfolio__swiper--portrait {
+    max-width: 260px;
+}
+
+/* A <button> so the enlarge action is reachable by keyboard, reset back to
+   looking like the plain image container it replaced. */
 .portfolio__item-image {
     border-radius: 1.5rem;
     overflow: hidden;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+}
+
+.portfolio__item-image:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.portfolio__item-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ================== Enlarged screenshot ============== */
+
+.portfolio__lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+}
+
+.portfolio__lightbox img {
+    max-width: 94vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.6rem;
+    cursor: default;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.6);
+}
+
+.portfolio__lightbox-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.8rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-bg-variant);
+    color: var(--color-white);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.portfolio__lightbox-close:hover {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+.portfolio__lightbox-close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 .portfolio__item > h3 {
-    margin: 1.2rem 0 2rem;
+    margin: 1.2rem 0 0.4rem;
+}
+
+/* The accent is too close in value to the card background to carry small text,
+   so the stack line reads as light-on-dark with letter-spacing instead. */
+.portfolio__item-stack {
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--color-white);
+    opacity: 0.72;
+    margin-bottom: 0.9rem;
+}
+
+.portfolio__item-desc {
+    font-size: 0.92rem;
+    margin-bottom: 1.4rem;
+    /* Pushes the buttons to the bottom so cards of different lengths still line
+       their CTAs up across a row. */
+    flex-grow: 1;
 }
 
 .portfolio__item-cta {

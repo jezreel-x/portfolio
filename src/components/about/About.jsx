@@ -23,38 +23,39 @@ const About = () => {
                         
                         <article className='about__card'>
                             <FaAward className='about__icon' />
-                            <h5>Level</h5>
-                            <small>Intermediate</small>
+                            <h5>Experience</h5>
+                            <small>2+ years in production</small>
                         </article>
-                        
 
-                        <article className='about__card'>
-                            <TbCertificate className='about__icon' />
-                            <h5>Certificates</h5>
-                            <small><b>The React Crash Course</b></small><br />
-                            <small><b>The Node.js Masterclass</b></small><br />
-                            <small><b>Frontend Fundamentals and more...</b></small><br />
-                        </article>
 
                         <article className='about__card'>
                             <VscFolderLibrary className='about__icon' />
-                            <h5>Projects</h5>
-                            <small>3+ Completed including a web and mobile app for rentals - AirHousing</small>
+                            <h5>Reach</h5>
+                            <small>1,700+ providers served across all 47 counties</small>
+                        </article>
+
+                        <article className='about__card'>
+                            <TbCertificate className='about__icon' />
+                            <h5>Shipped</h5>
+                            <small>Web, mobile and API — live on Play Store and App Store</small>
                         </article>
                     </div>
 
                     <p>
-                    Results-driven Software Engineer with 2+ years of experience in Web design and development, 
-                    Mobile App Development using languages and technologies such as HTML, CSS, JavaScript, React,
-                    React Native, Next,js coupled with backend technologies such as MySQL, PHP, Laravel.
+                    Software Engineer building production web, mobile and API systems from Nairobi. I work in
+                    TypeScript and React on the front end, React Native for mobile, and Node.js, Express and
+                    PostgreSQL on the back end — currently on a live construction marketplace serving 1,700+
+                    verified providers across Kenya.
                     </p>
 
 
                     <p>
-                    Always looking to create user-friendly and compelling User Interfaces with a seamless 
-                    User Experience by transforming designs into functional code that solve real-world problems.
+                    Most of my work sits where money and data meet the interface: M-Pesa payment integration with
+                    reconciliation, escrow released against approved milestones, role-based access across five user
+                    types, and reporting dashboards where a displayed total has to reconcile with the line items
+                    beneath it. I care about the numbers being right as much as the screen looking right.
                     </p>
-                   
+
 
                     <a href="#contact" className='btn btn-primary'>Let's Talk</a>
                 </div>

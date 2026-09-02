@@ -20,7 +20,10 @@
     --color-bg-variant: #2c2c6c;
     --color-primary: #4db5ff; */
 
-    --color-primary-variant: Orgba(77, 181, 255, 0.4);
+    /* Was `Orgba(...)` — an invalid colour value, so every rule using this
+       variable (the portfolio card hover border among them) silently did
+       nothing at all. */
+    --color-primary-variant: rgba(166, 143, 151, 0.5);
     --color-white: #fff;
     --color-light: rgba(255, 255, 255, 0.6);
 
