@@ -1,8 +1,5 @@
 import React from 'react';
 import './testimonials.css';
-import AVT1 from '../../assets/avatar1.jpg';
-import AVT2 from '../../assets/avatar2.jpg';
-import AVT3 from '../../assets/avatar3.jpg';
 
 // import Swiper core and required modules
 import { Pagination } from 'swiper';
@@ -13,22 +10,32 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+/**
+ * "Mary Watiri" -> "MW". Stock photographs attached to real people's names read
+ * as invented the moment anyone looks closely, so these are initials instead.
+ */
+const initials = (name) =>
+    name
+        .trim()
+        .split(/\s+/)
+        .slice(0, 2)
+        .map((word) => word[0])
+        .join('')
+        .toUpperCase();
+
 const data = [
     {
-        avatar: AVT1,
         name: 'Mary Watiri',
         review: `As his co-worker, I was pleased to work with such an industrious individual. Showed prowess, zeal and passion in the 
         developing software solutions - while constantly initiating a strong determination to grow in this career, both
         from a personal and community perspective.`,
     },
     {
-        avatar: AVT2,
         name: 'Alex Maragia',
         review: `Showed extra due diligence in his work. Good in communication skills and team-collaboration. 
         Very proud.`,
     },
     {
-        avatar: AVT3,
         name: 'Kirinyet Brian',
         review: `Was pleased to work with one of the most brilliant minds in the Software Development industry, very committed
         and down to earth to solving problems that came his way. His technical skills were well beyond my expectations,
@@ -51,11 +58,12 @@ const Testimonials = () => {
                 pagination={{ clickable: true }}
             >
                 {
-                    data.map(({ avatar, name, review }, index) => {
+                    data.map(({ name, review }, index) => {
                         return (
                             <SwiperSlide key={index} className="testimonial">
-                                <div className="client__avatar">
-                                    <img src={avatar} alt='#' />
+                                {/* Decorative: the full name is stated right below it. */}
+                                <div className="client__avatar" aria-hidden='true'>
+                                    {initials(name)}
                                 </div>
                                 <h5 className='client__name'>{name}</h5>
                                 <small className='client__review'>{review}</small>
