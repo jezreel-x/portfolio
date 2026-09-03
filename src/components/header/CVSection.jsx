@@ -1,5 +1,5 @@
 import React from 'react';
-import CV from '../../assets/MUTONGA-CV.pdf'
+import CV from '../../assets/Mutonga-Romeo-CV.pdf'
 
 // A recruiter who wants the CV should not have to email and wait for it. The
 // download sits first because it is the action most visitors came to take.
