@@ -103,9 +103,11 @@ const data = [
         id: 4,
         image: [IMG1, IMG9, IMG29, IMG30, IMG31],
         title: 'Expense Tracker',
-        stack: 'React · JavaScript',
-        description: `A personal finance tracker for logging and categorising expenses, with running totals and
-        a breakdown by category.`,
+        stack: 'React · styled-components · Framer Motion',
+        description: `A personal finance tracker for logging income and expenses against categories, with a
+        running balance, totals, and history grouped by day. Entries can be searched, edited in place or
+        removed, and persist between visits. Themed light and dark, with an animated list and a test suite
+        covering the behaviour.`,
         github: 'https://github.com/jezreel-x/expense-tracker',
         demo: 'https://expense-ui.netlify.app/',
     },
