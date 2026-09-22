@@ -34,6 +34,10 @@ import IMG26 from '../../assets/portfolio-photo(26).png';
 import IMG27 from '../../assets/portfolio-photo(27).png';
 import IMG28 from '../../assets/portfolio-photo(28).png';
 
+// Expense Tracker Images
+import IMG29 from '../../assets/portfolio-photo(29).png';
+import IMG30 from '../../assets/portfolio-photo(30).png';
+import IMG31 from '../../assets/portfolio-photo(31).png';
 
 
 
@@ -97,7 +101,7 @@ const data = [
     },
     {
         id: 4,
-        image: [IMG1, IMG9],
+        image: [IMG1, IMG9, IMG29, IMG30, IMG31],
         title: 'Expense Tracker',
         stack: 'React · JavaScript',
         description: `A personal finance tracker for logging and categorising expenses, with running totals and
