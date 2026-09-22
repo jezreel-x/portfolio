@@ -115,9 +115,13 @@ const data = [
         id: 5,
         image: [IMG26, IMG27, IMG28],
         title: 'Calorie Tracker',
-        stack: 'React · JavaScript',
-        description: `A nutrition tracker where users log a food item with its protein, calorie, fat and carb
-        values, keep a running daily total, and are warned when they pass their limit.`,
+        stack: 'React · Vite · Tailwind CSS · Framer Motion',
+        description: `A nutrition tracker for logging food with its calories and macros, against a daily
+        guideline and a breakdown of where the day's energy actually comes from — weighted per macro rather
+        than by raw grams. Entries carry a quantity, can be searched, edited in place or removed, and persist
+        between visits; one whose macros don't reconcile with its calorie figure is flagged as a likely typo.
+        Themed light and dark on a palette checked for colour-blind separation, with an animated list and a
+        test suite covering the behaviour.`,
         github: 'https://github.com/jezreel-x/calorie-tracker-app',
         demo: 'https://nutrition-and-calorie-tracker.netlify.app/',
     }
